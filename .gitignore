@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+*.db
+*.sqlite
+reports/*.pdf
+.DS_Store
