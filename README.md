@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/logo.png" alt="indian-market-decision-cockpit Logo" width="160" />
+</p>
+
 # Indian Market Decision Cockpit
 
 > Real-time decision-support dashboard for Indian equity markets (NSE/BSE) integrating deterministic quant metrics and institutional money flows.

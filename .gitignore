@@ -5,3 +5,7 @@ __pycache__/
 *.sqlite
 reports/*.pdf
 .DS_Store
+
+!assets/logo.png
+!assets/
+!assets/**
