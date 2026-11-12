@@ -210,6 +210,7 @@ with st.sidebar:
 # --- MAIN DASHBOARD HEADER ---
 st.title("📈 Indian Market Decision Support & Screening Cockpit")
 st.markdown("Quantitative Screener • Live Indian News & Catalysts • 4 Pillars of Evidence • Stop Loss & Target Rationale")
+st.caption("⚠️ Educational/informational tool only. Not investment advice. The author is not a SEBI-registered investment adviser or research analyst. Do your own research and consult a registered adviser before trading.")
 
 # --- INTERACTIVE HOW-TO GUIDE ACCORDION ---
 with st.expander("💡 How to Understand & Trade with This Cockpit (Trader's Guide)", expanded=False):

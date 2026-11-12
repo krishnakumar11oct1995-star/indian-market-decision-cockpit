@@ -54,7 +54,9 @@ Return ONLY the raw JSON object, no markdown, no explanations.
                 "responseMimeType": "application/json"
             }
         }
-        res = requests.post(config.GEMINI_ENDPOINT, json=payload, timeout=8)
+        if not config.GEMINI_ENDPOINT:
+            raise RuntimeError("GEMINI_API_KEY not set; using fallback")
+        res = requests.post(config.GEMINI_ENDPOINT, json=payload, headers=config.GEMINI_HEADERS, timeout=8)
         if res.status_code == 200:
             data = res.json()
             raw_text = data['candidates'][0]['content']['parts'][0]['text']

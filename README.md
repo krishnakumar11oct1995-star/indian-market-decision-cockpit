@@ -4,6 +4,8 @@
 
 # Indian Market Decision Cockpit
 
+> **Disclaimer:** This project is for educational and informational purposes only and is **not investment advice**. The author is **not a SEBI-registered** investment adviser or research analyst. Trading involves risk of loss; do your own research and consult a SEBI-registered adviser before acting on any output.
+
 > Real-time decision-support dashboard for Indian equity markets (NSE/BSE) integrating deterministic quant metrics and institutional money flows.
 
 ## 🚀 Features

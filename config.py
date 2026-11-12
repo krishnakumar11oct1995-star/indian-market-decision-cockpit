@@ -1,9 +1,15 @@
 import os
 
 # Gemini Configuration
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "***REMOVED***")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or None
 GEMINI_MODEL = "gemini-2.5-flash"
-GEMINI_ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}"
+# Endpoint is None when no key is configured; callers must skip AI calls and use fallbacks.
+GEMINI_ENDPOINT = (
+    f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
+    if GEMINI_API_KEY else None
+)
+# Send the key as a header instead of a URL query param.
+GEMINI_HEADERS = {"x-goog-api-key": GEMINI_API_KEY} if GEMINI_API_KEY else {}
 
 # Nifty 50 Tickers (Yahoo Finance format with .NS)
 NIFTY_50_TICKERS = [

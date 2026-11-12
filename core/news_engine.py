@@ -115,7 +115,9 @@ Return ONLY the JSON object.
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"}
         }
-        res = requests.post(config.GEMINI_ENDPOINT, json=payload, timeout=7)
+        if not config.GEMINI_ENDPOINT:
+            raise RuntimeError("GEMINI_API_KEY not set; using fallback")
+        res = requests.post(config.GEMINI_ENDPOINT, json=payload, headers=config.GEMINI_HEADERS, timeout=7)
         if res.status_code == 200:
             parsed = json.loads(res.json()['candidates'][0]['content']['parts'][0]['text'])
             result = {
